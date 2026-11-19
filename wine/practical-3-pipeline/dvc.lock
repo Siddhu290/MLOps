@@ -1,0 +1,61 @@
+schema: '2.0'
+stages:
+  collect:
+    cmd: python src/pipeline/collect.py --output data/raw/wine_raw.csv
+    deps:
+    - path: src/pipeline/collect.py
+      hash: md5
+      md5: f9399181fbe8b45a8143e1dee7b38dc2
+      size: 1360
+    outs:
+    - path: data/raw/wine_raw.csv
+      hash: md5
+      md5: 6f1883599d857f4bef52c028f39bc4b1
+      size: 19209
+  preprocess:
+    cmd: python src/pipeline/preprocess.py --input data/raw/wine_raw.csv 
+      --output data/processed/wine_preprocessed.csv
+    deps:
+    - path: data/raw/wine_raw.csv
+      hash: md5
+      md5: 6f1883599d857f4bef52c028f39bc4b1
+      size: 19209
+    - path: src/pipeline/preprocess.py
+      hash: md5
+      md5: cd73fe2b4b57bcb0fcff4f645a0392f6
+      size: 1844
+    outs:
+    - path: data/processed/wine_preprocessed.csv
+      hash: md5
+      md5: 7f3bc6002ad0af66445df34eb757141f
+      size: 13322
+  features:
+    cmd: python src/pipeline/features.py --input 
+      data/processed/wine_preprocessed.csv --output 
+      data/processed/wine_features.csv
+    deps:
+    - path: data/processed/wine_preprocessed.csv
+      hash: md5
+      md5: 7f3bc6002ad0af66445df34eb757141f
+      size: 13322
+    - path: src/pipeline/features.py
+      hash: md5
+      md5: 39e7d75321408aa75fad181e60c45d22
+      size: 1410
+    outs:
+    - path: data/processed/wine_features.csv
+      hash: md5
+      md5: 79ec1659352c92ed457067d20ce1ef3f
+      size: 22434
+  validate:
+    cmd: python src/pipeline/validate.py --input 
+      data/processed/wine_features.csv
+    deps:
+    - path: data/processed/wine_features.csv
+      hash: md5
+      md5: 79ec1659352c92ed457067d20ce1ef3f
+      size: 22434
+    - path: src/pipeline/validate.py
+      hash: md5
+      md5: 8b31609f50b6dfc076d281b68b7db6e1
+      size: 2469

@@ -1,4 +1,4 @@
-# Practical 1 — Version B
+# Practical 1 — Version A + B (resolved)
 
 Branch: `wine/practical-1` · Folder: `wine/practical-1-git/` · Lab manual: Expt 2
 

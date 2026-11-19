@@ -1,0 +1,15 @@
+# Virtual environments and Python cache
+.venv*/
+venv/
+__pycache__/
+*.pyc
+
+# Generated locally, never committed
+data/
+models/
+
+# MLflow tracking store and artifacts
+mlruns/
+mlartifacts/
+mlflow.db
+confusion_matrix_*.png

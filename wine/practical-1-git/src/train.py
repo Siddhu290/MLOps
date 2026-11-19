@@ -40,6 +40,7 @@ def main():
     acc, report = evaluate_model(model, X_test, y_test)
 
     print(f"Accuracy: {acc:.4f}")
+    print(report)
 
     os.makedirs("models", exist_ok=True)
     joblib.dump(model, "models/wine_model.joblib")

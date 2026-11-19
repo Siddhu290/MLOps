@@ -1,0 +1,9 @@
+# Virtual environments and Python cache
+.venv*/
+venv/
+__pycache__/
+*.pyc
+
+# DVC writes its own .gitignore files for the data it tracks,
+# so data/ is NOT ignored here (the .dvc pointer files must be committed)
+models/

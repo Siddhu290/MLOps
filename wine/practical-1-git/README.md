@@ -1,4 +1,4 @@
-# Practical 1 — Git version control (Wine)
+# Practical 1 — Version A
 
 Branch: `wine/practical-1` · Folder: `wine/practical-1-git/` · Lab manual: Expt 2
 

@@ -44,6 +44,8 @@ def main():
     os.makedirs("models", exist_ok=True)
     joblib.dump(model, "models/cancer_model.joblib")
     print("Model saved to models/cancer_model.joblib")
+    print(f"Accuracy: {acc:.4f}")
+    print(report)
 
 
 if __name__ == "__main__":

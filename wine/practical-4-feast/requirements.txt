@@ -1,0 +1,4 @@
+feast
+pandas
+pyarrow
+scikit-learn
